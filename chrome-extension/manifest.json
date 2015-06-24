@@ -1,0 +1,27 @@
+{
+  "name": "callstats.io screener",
+  "description": "Screensharing extension for an WebRTC Application, made by callstats.io",
+  "short_name": "csio screener",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "minimum_chrome_version": "34",
+  "icons": { "16": "callstatsicon16.png",
+           "48": "callstatsicon48.png",
+          "128": "callstatsicon128.png"
+  },
+  "permissions": [
+    "desktopCapture"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [ {
+    "js": [ "content.js" ],
+    "matches": [ "https://demo.callstats.io/*" ]
+  }],
+  "externally_connectable": {
+      "matches": [
+          "https://demo.callstats.io/*"
+      ]
+  }
+}
